@@ -9,7 +9,8 @@ let package = Package(
         .macOS(.v12),
     ],
     dependencies: [
-        .package(url: "https://github.com/SwiftcordApp/DiscordKit", branch: "main")
+        .package(url: "https://github.com/SwiftcordApp/DiscordKit", branch: "main"),
+        .package(url: "https://github.com/Alamofire/Alamofire.git", .upToNextMajor(from: "5.8.1"))
     ],
     targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.
@@ -17,7 +18,8 @@ let package = Package(
         .executableTarget(
             name: "dhRuVaBot",
             dependencies: [
-                .product(name: "DiscordKitBot", package: "DiscordKit")
+                .product(name: "DiscordKitBot", package: "DiscordKit"),
+                .product(name: "Alamofire", package: "Alamofire")
             ]
         )
     ]
