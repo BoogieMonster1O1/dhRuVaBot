@@ -6,7 +6,7 @@ import Alamofire
 @main
 public struct Bot {
     
-    static let bot = Client(intents: [.unprivileged, .messageContent, .guildMembers])
+    static let bot = Client(intents: [.unprivileged])
     static let guildId = "1199414187387015249"
     static let NASA_API_KEY = "GIbfW1AsGt0rFtrvbczg" + "9PSee9UxxfHATc5Lb4hJ"
 
@@ -14,7 +14,7 @@ public struct Bot {
         bot.login()
         
         bot.ready.listen {
-            print("Successfully logged in as \(bot.user!.username)#\(bot.user!.discriminator)!")
+//            print("Successfully logged in as \(bot.user!.username)#\(bot.user!.discriminator)!")
             do {
                 try await registerSlashCommands()
             } catch {
@@ -48,15 +48,15 @@ public struct Bot {
                     return
                 }
                 
-                let embed = BotEmbed()
-                    .color(0x0099FF)
-                    .description(response.explanation)
-                    .title(response.title)
-                    .footer(response.date)
-                    .url(URL(string: response.url)!)
 
                 try? await interaction.reply({
-                    return [embed]
+                    BotEmbed()
+                        .color(0x0099FF)
+                        .description(response.explanation)
+                        .title(response.title)
+                        .footer(response.date)
+                        .timestamp(Date.now)
+                        .image(response.url)
                 })
             }
         }

@@ -21,10 +21,10 @@
     {
       "identity" : "discordkit",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/SwiftcordApp/DiscordKit",
+      "location" : "https://github.com/BoogieMonster1O1/DiscordKit",
       "state" : {
-        "branch" : "main",
-        "revision" : "339ced9a16f9c29a63ee2fb2729cedfcb1e495bb"
+        "branch" : "embeds",
+        "revision" : "46ca058ec3cd1da7456c5bc489d08ba6e952dcde"
       }
     },
     {

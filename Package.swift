@@ -9,7 +9,7 @@ let package = Package(
         .macOS(.v12),
     ],
     dependencies: [
-        .package(url: "https://github.com/SwiftcordApp/DiscordKit", branch: "main"),
+        .package(url: "https://github.com/BoogieMonster1O1/DiscordKit", branch: "embeds"),
         .package(url: "https://github.com/Alamofire/Alamofire.git", .upToNextMajor(from: "5.8.1"))
     ],
     targets: [
